@@ -21,7 +21,7 @@ export const fetchList = async (req, res) => {
   } catch (error) {
     console.log(error);
     console.log("error here");
-    return res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error });
   }
 };
 
