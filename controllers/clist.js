@@ -12,10 +12,11 @@ export const fetchList = async (req, res) => {
   const time = new Date().toLocaleTimeString();
   const dat = time.split(" ");
   const apiParam = `${datebreak[2]}-${datebreak[1]}-${datebreak[0]}T${dat[0]}`;
-  const url = `https://clist.by/api/v1/contest/?username=rkas&api_key=2af8de4db93746d3d1ef7b60440c57b77943427b&resource__id__in=1,2,3,12,25,26,29,35,63,65,67,73,90,93,102,117,120&start__gte=2021-04-14T12:00:00&order_by=start&limit=300`;
 
   try {
-    const data = await axios.get(url);
+    const data = await axios.get(
+      `https://clist.by/api/v1/contest/?username=rkas&api_key=2af8de4db93746d3d1ef7b60440c57b77943427b&resource__id__in=1,2,3,12,25,26,29,35,63,65,67,73,90,93,102,117,120&start__gte=${apiParam}&order_by=start&limit=300`
+    );
     return res.status(200).json({ data: data.data.objects });
   } catch (error) {
     console.log(error);
