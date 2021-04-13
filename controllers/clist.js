@@ -6,6 +6,7 @@ export const fetchList = async (req, res) => {
   // const dat = time.split(" ");
   // const apiParam = `${date}T${dat[0]}`;
   // console.log(date);
+
   const date = new Date().toLocaleDateString();
   const datebreak = date.split("/");
   const time = new Date().toLocaleTimeString();
@@ -19,7 +20,7 @@ export const fetchList = async (req, res) => {
   } catch (error) {
     console.log(error);
     console.log("error here");
-    return res.status(500).json({ message: "Something went wrong" });
+    return res.status(500).json({ message: error.message });
   }
 };
 
