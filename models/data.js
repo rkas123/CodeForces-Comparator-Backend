@@ -6,4 +6,4 @@ const dataSchema = mongoose.Schema({
   data: { type: Object },
 });
 
-export default mongoose.model("User", dataSchema);
+export default mongoose.model("Data", dataSchema);
