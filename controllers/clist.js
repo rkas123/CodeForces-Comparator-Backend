@@ -1,17 +1,10 @@
 import axios from "axios";
 
 export const fetchList = async (req, res) => {
-  // const date = new Date().toLocaleDateString();
-  // const time = new Date().toLocaleTimeString();
-  // const dat = time.split(" ");
-  // const apiParam = `${date}T${dat[0]}`;
-  // console.log(date);
-
   const date = new Date().toLocaleDateString();
   const datebreak = date.split("/");
   const time = new Date().toLocaleTimeString();
   const dat = time.split(" ");
-  const apiParam = `${datebreak[2]}-${datebreak[1]}-${datebreak[0]}T${dat[0]}`;
 
   try {
     const data = await axios.get(
