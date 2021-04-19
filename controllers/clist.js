@@ -31,7 +31,7 @@ export const fetchList = async (req, res) => {
 
     try {
       const data = await axios.get(
-        `https://clist.by/api/v1/contest/?username=rkas&api_key=2af8de4db93746d3d1ef7b60440c57b77943427b&resource__id__in=1,2,3,12,25,26,29,35,63,65,67,73,90,93,102,117,120&start__gte=${datebreak[2]}-${datebreak[1]}-${datebreak[0]}T${dat[0]}&order_by=start&limit=300`
+        `https://clist.by/api/v1/contest/?username=rkas&api_key=2af8de4db93746d3d1ef7b60440c57b77943427b&resource__id__in=1,2,3,12,25,26,29,35,63,65,67,73,90,93,102,117,120&start__gte=${datebreak[2]}-${datebreak[0]}-${datebreak[1]}T${dat[0]}&order_by=start&limit=300`
       );
       const currDate = new Date();
       const currTime = currDate.getTime();
