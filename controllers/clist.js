@@ -2,15 +2,12 @@ import Data from "../models/data.js";
 import axios from "axios";
 
 export const fetchList = async (req, res) => {
-  console.log("in fetchlist");
   let fetchReq = false;
   const existingData = await Data.findOne({ id: 1 });
   // console.log(existingData);
   if (!existingData) {
-    console.log("No existing data");
     fetchReq = true;
   } else {
-    console.log("data exists");
     const currDate = new Date();
     const currTime = currDate.getTime();
     const fetchTime = existingData.date;
@@ -20,10 +17,8 @@ export const fetchList = async (req, res) => {
     }
   }
   if (!fetchReq) {
-    console.log("No new fetch required");
     return res.status(200).json({ data: existingData.data });
   } else {
-    console.log("fetching");
     const date = new Date().toLocaleDateString();
     const datebreak = date.split("/");
     const time = new Date().toLocaleTimeString();
@@ -51,8 +46,6 @@ export const fetchList = async (req, res) => {
 
       return res.status(200).json({ data: data.data.objects });
     } catch (error) {
-      // console.log(error);
-      console.log("error here");
       return res.status(500).json({ message: error });
     }
   }
