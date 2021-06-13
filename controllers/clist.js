@@ -4,7 +4,6 @@ import axios from "axios";
 export const fetchList = async (req, res) => {
   let fetchReq = false;
   const existingData = await Data.findOne({ id: 1 });
-  // console.log(existingData);
   if (!existingData) {
     fetchReq = true;
   } else {
