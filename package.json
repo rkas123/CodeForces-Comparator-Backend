@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "type": "module",
   "dependencies": {
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
