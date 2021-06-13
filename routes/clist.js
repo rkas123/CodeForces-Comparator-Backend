@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router();
-import { fetchList } from "../controllers/clist.js";
+import { fetchList, fetchListForBot } from "../controllers/clist.js";
 
 router.get("/", fetchList);
 
